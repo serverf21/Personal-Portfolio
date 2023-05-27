@@ -16,16 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 This is a personal portfolio app which temlate you can utilize to make your own portfolio website.
 If you have better ideas regarding the placement, design, execution or the code, feel free to fork the repo and try it out.
 
-![alt text]([https://github.com/serverf21/Personal-Portfolio/tree/main/src/assets/demo/1.jpg])
 
-![Alt text](/src/assets/demo/1.jpg?raw=true "Title")
-
-![Alt text](http://url/to/img.png]()
-
-
-<img width="1273" alt="image" src="https://github.com/serverf21/Codeial-Social-Media-Application/assets/30923855/96021a3b-96db-4c51-95d2-ea877a66d3f1">
-<img width = "1273" alt="img" src="https://github.com/serverf21/Personal-Portfolio/tree/main/src/assets/demo/1.jpg">
-
-
+<img src="./src/assets/demo/1.jpg" alt="image">
 Wanna work together? Ping me at
 sarvagyasaxena.2102@gmail.com
