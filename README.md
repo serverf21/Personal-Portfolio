@@ -15,8 +15,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 This is a personal portfolio app which temlate you can utilize to make your own portfolio website.
 If you have better ideas regarding the placement, design, execution or the code, feel free to fork the repo and try it out.
+![1](https://github.com/serverf21/Personal-Portfolio/assets/30923855/f6ec4f0e-b74f-453c-a512-ebd43c423a68)
 
 
-<img src="./src/assets/demo/1.jpg" alt="image">
+
+
+
 Wanna work together? Ping me at
 sarvagyasaxena.2102@gmail.com
