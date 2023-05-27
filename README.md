@@ -13,7 +13,7 @@ Post that, install the required libraries and run -
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-This is a personal portfolio app which temlate you can utilize to make your own portfolio website.
+This is a personal portfolio website temlate you can utilize to make your own portfolio website. Since, it is designed using react, the template is completely responsive and can be opened on browsers of any device including mobile phones, tablets, and PC (all sizes).
 If you have better ideas regarding the placement, design, execution or the code, feel free to fork the repo and try it out.
 
 Preview of my portfolio website - 
