@@ -18,6 +18,8 @@ If you have better ideas regarding the placement, design, execution or the code,
 
 ![alt text]([http://url/to/img.png](https://github.com/serverf21/Personal-Portfolio/tree/main/src/assets/demo/1.jpg))
 
+![Alt text](/src/assets/demo/1.jpg?raw=true "Title")
+
 
 Wanna work together? Ping me at
 sarvagyasaxena.2102@gmail.com
