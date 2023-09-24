@@ -10,12 +10,12 @@ const Education = () => {
     return (
         <section className="section" id="education">
             <div className="container mx-auto">
-                <div className='gap-x-10 gap-y-10 mb-6 lg:mb-20'>
+                <div className='gap-x-40 gap-y-10 mb-6 lg:mb-20 lg:p-5'>
                     <div className='flex flex-col lg:flex-row justify-center items-center'>
                         {/* Both education and experience */}
                         <div className="education-row
             flex flex-wrap gap-[5rem] m-10">
-                            <div className="column-row flex-1">
+                            <div className="column-row flex-1 lg:mr-10">
                                 <h2 className="h2 text-cyan-500 title-[2.5rem] m-[1rem] mb-[2vh]">Education</h2>
                                 <div className="education-box border-l-2 border-opacity-40 border-l-cyan-800">
                                     {/* Number 1 - Education */}
@@ -82,7 +82,7 @@ const Education = () => {
                             </div>
 
                             {/* Experience */}
-                            <div className="column-row flex-1">
+                            <div className="column-row flex-1 lg:ml-10">
                                 <h2 className="h2 text-cyan-500 title-[2.5rem] m-[1rem] mb-[2vh]">Experience</h2>
                                 <div className="education-box border-l-2 border-opacity-40 border-l-cyan-800 mr-5">
                                     <motion.div
@@ -97,7 +97,7 @@ const Education = () => {
                                                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAThJREFUaEPtWcENgzAMND8yRjYpk7WdrGzCGOTXKqhINIIY4wgT9fJCIo59d+Ei4oYqH03l9RMAWCt4WIGxHd7L4l3worW08XNuUdJlwdoCtPEAoGVQG79LgbEdbkR0/06Oz2ePpwv+kUua/QZSls6ufpGvc8H3a/k3AYztEJHP7BvWPqXuXfCdFMCPTRojqB4AbZ0zuS10JQX0AKQnrXbL7bXZ3QoAgFASKHChQ2zSDi4k3MLFp0OB4pQKF4QCKWEpI5xvS99z+dgfGs5GASC5xZASBgWEJqKeDhdSU6hcAApwviz1ec6GuXxwIY5B7XsowJ2MSlMRh8OFxJQVDvhLBV5EZNETWNXuiAJXArDZ6MhdLUb2IwjzkbvWZLuUho2OuSMT2V/tzkRmWQDm9DMFAIC1QtUr8AE8WCdAvpj18wAAAABJRU5ErkJggg=="
                                                     alt=""
                                                 />
-                                                June 2022-Present
+                                                June 2022-July 2023
                                             </div>
                                             <h3 className="h3 mb-0 text-xl">Full-Stack Developer</h3>
                                             <p>(MERN & Blockchain)</p>

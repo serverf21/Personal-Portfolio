@@ -19,28 +19,31 @@ const Banner = () => {
 
   return (
     <section className="min-h-[80vh] lg:min-h-[85vh] flex sm:justify-center" id='home'>
-      <div className="container mx-auto">
-        <div className="flex flex-col gap-y-6 align-middle lg:flex-row lg:items-center lg:align-middle lg:gap-x-12">
+      <div className="mx-[10vw] md:mx-auto md:mt-[10vh]">
+        <div className="flex flex-col sm:pt-20 md:pt-0 gap-y-6 lg:flex-row lg:items-center
+        lg:align-middle lg:gap-x-[100px] overflow-hidden ">
 
           {/* {image} */}
-          <motion.div variants={fadeIn('down', 0.5)}
-            initial="hidden" whileInView={'show'}
+          <div className='flex justify-center items-center align-middle mx-auto md:mb-8 lg:mb-0'>
+            <motion.div variants={fadeIn('down', 0.5)}
+              initial="hidden" whileInView={'show'}
 
-            className="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]
-          mx-auto justify-center mix-blend-lighten brightness-150 lg:pl-[8vw] mt-[6vh]">
-            <Image src={MyImage} alt='' className='min-w-[42vw]' fluid />
-          </motion.div>
+              className="hidden md:flex flex-1 max-w-[40vw]
+          md:mx-auto justify-center mix-blend-lighten brightness-150 md:ml-[10vw] lg:ml-[15vw] xl:ml-[3vw]">
+              <Image src={MyImage} alt='' className='max-w-[40vw]' fluid />
+            </motion.div>
+          </div>
 
           {/* {text} */}
           <motion.div variants={fadeIn('up', 0.3)}
             initial="hidden" whileInView={'show'}
             viewport={{ once: false, amount: 0.7 }}
-            className="flex-1 text-center align-middle font-secondary lg:ml-[10vw] lg:text-left lg:w-4/5 sm:w-full text-2xl">
+            className="flex-1 text-center align-middle font-secondary xl:ml-[5vw] lg:mr-[5vw] lg:text-left sm:w-full text-2xl">
 
 
 
-            <p className="text-cyan-600 mb-3">
-              <span className='text-xl'>Hi there!</span>
+            <p className="text-cyan-600 mb-3 lg:mb-8">
+              <span className='text-[2rem]'>Hi there!</span>
               <span className="wave ml-3 text-4xl" role="img" aria-labelledby="wave">
                 👋🏻
               </span>
@@ -55,7 +58,8 @@ const Banner = () => {
             <motion.div variants={fadeIn('up', 0.3)}
               initial="hidden" whileInView={'show'}
               viewport={{ once: false, amount: 0.7 }}
-              className="mb-6 text-[3vh] lg:text-[3vh] font-secondary uppercase leading-[1] pt-1 flex flex-row lg:justify-start justify-center">
+              className="mb-6 text-[3vh] lg:text-[3vh] font-secondary uppercase leading-[1] pt-1
+              flex flex-row lg:justify-start justify-center py-6 xl:space-y-11">
 
               <TypeAnimation sequence={[
                 'Full-Stack Engineer',
@@ -78,7 +82,7 @@ const Banner = () => {
             <motion.p variants={fadeIn('up', 0.3)}
               initial="hidden" whileInView={'show'}
               viewport={{ once: false, amount: 0.7 }}
-              className="mt-10 mb-4 max-w-lg mx-auto text-[3vh] lg:text-[2vh] lg:mx-0">Nice to meet you. Please take a look around.</motion.p>
+              className="xl:mt-10 mb-4 mx-auto text-[3vh] lg:text-[2vh] lg:mx-0">Nice to meet you. Please take a look around.</motion.p>
             <motion.div variants={fadeIn('up', 0.3)}
               initial="hidden" whileInView={'show'}
               viewport={{ once: false, amount: 0.7 }}
@@ -94,7 +98,8 @@ const Banner = () => {
               <a href="https://drive.google.com/file/d/1izGevUmhfBDRbWRQ6Pd07kV2Q08E7m1g/view?usp=sharing"
                 target="_blank" rel="noreferrer">
                 <div
-                  className="px-4 py-3 border-b-4 border-cyan-200 text-cyan-200 hover:text-white hover:bg-cyan-700 transition-all duration-200 w-[170px] flex justify-center flex-row items-center text-base"
+                  className="px-4 py-3 border-b-4 border-cyan-200 text-cyan-200 hover:text-white hover:bg-cyan-700
+                  transition-all duration-200 w-[150px] xl:w-[200px] flex justify-center flex-row items-center text-base xl:text-xl"
 
                 >
                   See my Resume
@@ -102,7 +107,7 @@ const Banner = () => {
                 </div>
               </a>
             </motion.div>
-            <div>
+            <div className='xl:space-y-5'>
               <a href="/" className="text-gradient btn-link">FIND ME ON</a>
               {/* {Socials} */}
               <div className="flex text-[20px] gap-x-6 max-w-max mx-auto lg:mx-0">

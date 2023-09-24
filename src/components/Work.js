@@ -17,7 +17,7 @@ const Work = () => {
   return (
     <section className='section bg-cyan-950' id="work">
       <div className="container mx-auto align-middle">
-        <div className='flex flex-col lg:flex-row gap-x-10 gap-y-10 md:mb-10 align-middle'>
+        <div className='flex flex-col lg:flex-row gap-x-10 gap-y-10 align-middle m-5 lg:m-0'>
           {/* Left-text and Left-Image */}
           <motion.div
             variants={fadeIn('left', 0.3)}
@@ -45,7 +45,7 @@ const Work = () => {
                   View all projects
                 </button>
               </a>
-              <p className='text-cyan-500 text-base text-center'>
+              <p className='text-cyan-500 text-base text-center invisible lg:visible'>
                 Hover over the blocks to know more!
               </p>
             </div>
@@ -67,7 +67,7 @@ const Work = () => {
                       Crazy Racing
                     </div>
                     {/* title */}
-                    <div className='invisible md:visible md:text-sm text-white text-sm'>React.js | Three.js | Vite</div>
+                    <div className='invisible lg:visible md:text-sm text-white text-sm'>React.js | Three.js | Vite</div>
                   </div>
                 </a>
 
@@ -88,7 +88,7 @@ const Work = () => {
                       WebRTC VideoChat
                     </div>
                     {/* title */}
-                    <div className='invisible md:visible md:text-sm text-white text-sm'>SRTP | UDP | Socket.io | Express.js | React.js</div>
+                    <div className='invisible lg:visible md:text-sm text-white text-sm'>SRTP | UDP | Socket.io | Express.js | React.js</div>
                   </div>
                 </a>
 
@@ -107,12 +107,13 @@ const Work = () => {
             <div className='flex flex-row space-x-3 h-full'>
 
               <div className="group relative overflow-hidden border-2 border-white/50 rounded-lg cursor-pointer">
-                <a href="https://trello-appwrite-next-clone-serverf21.vercel.app/" target="_blank" rel="noreferrer">
+                <a href="https://trello-appwrite-next-clone-serverf21.vercel.app/" target="_blank" rel="noreferrer" className='w-full h-full'>
                   {/* Overlay */}
-                  <div className="bg-black/80 lg:bg-transparent lg:group-hover:bg-black/80 w-full h-full absolute z-30 transition-all duration-300"></div>
+                  <div className="bg-black/80 lg:bg-transparent lg:group-hover:bg-black/80 w-full h-full
+                  absolute z-30 transition-all duration-300"></div>
                   {/* img */}
                   <img
-                    className="scale-125 group-hover:scale-150 transition-all duration-500"
+                    className="scale-125 group-hover:scale-150 transition-all duration-500 object-cover "
                     src={trello} alt="" />
 
                   <div className='absolute -bottom-2 left-1 lg:-bottom-full lg:left-4 lg:group-hover:bottom-4 lg:transition-all lg:duration-500 z-40'>
@@ -121,7 +122,7 @@ const Work = () => {
                       AI-based Project Manager
                     </div>
                     {/* title */}
-                    <div className='invisible md:visible md:text-sm text-white text-sm'>Next.js | Appwrite | ReactBeautifulDND | GPT</div>
+                    <div className='invisible lg:visible md:text-sm text-white text-sm'>Next.js | Appwrite | ReactBeautifulDND | GPT</div>
                   </div>
                 </a>
 
@@ -142,7 +143,7 @@ const Work = () => {
                       Social Media App (Threads Clone)
                     </div>
                     {/* title */}
-                    <div className='invisible md:visible md:text-sm text-white text-sm'>Next.js | Clerk.js | RadixUI | Tailwind</div>
+                    <div className='invisible lg:visible md:text-sm text-white text-sm'>Next.js | Clerk.js | RadixUI | Tailwind</div>
                   </div>
                 </a>
 
@@ -165,7 +166,7 @@ const Work = () => {
                       TechTunes Blog
                     </div>
                     {/* title */}
-                    <div className='invisible md:visible md:text-sm text-white text-sm'>Next.js | Sanity | Tailwind | Typescript</div>
+                    <div className='invisible lg:visible md:text-sm text-white text-sm'>Next.js | Sanity | Tailwind | Typescript</div>
                   </div>
                 </a>
 
@@ -185,7 +186,7 @@ const Work = () => {
                       DeSocial on Polygon
                     </div>
                     {/* title */}
-                    <div className='invisible md:visible md:text-sm text-white text-sm'>React.js | ChakraUI | GraphQL | Polygon</div>
+                    <div className='invisible lg:visible md:text-sm text-white text-sm'>React.js | ChakraUI | GraphQL | Polygon</div>
                   </div>
                 </a>
 
@@ -208,7 +209,7 @@ const Work = () => {
                       BHOJ - Food Delivery App
                     </div>
                     {/* title */}
-                    <div className='invisible md:visible md:text-sm text-white text-sm'>React Native | Sanity | Tailwind | Redux</div>
+                    <div className='invisible lg:visible md:text-sm text-white text-sm'>React Native | Sanity | Tailwind | Redux</div>
                   </div>
                 </a>
 
@@ -228,7 +229,7 @@ const Work = () => {
                       Self-Driving Car - CNN Model
                     </div>
                     {/* title */}
-                    <div className='invisible md:visible md:text-sm text-white text-sm'>OpenCV | Keras | Tensorflow | Python</div>
+                    <div className='invisible lg:visible md:text-sm text-white text-sm'>OpenCV | Keras | Tensorflow | Python</div>
                   </div>
                 </a>
 

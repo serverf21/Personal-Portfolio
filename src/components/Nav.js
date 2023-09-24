@@ -19,8 +19,8 @@ const Nav = () => {
     <nav className="fixed bottom-2 lg:bottom-5 w-full overflow-hidden z-50">
       <div className="container mx-auto">
         {/* {nav inner} */}
-        <div className="sm:space-x-2 w-full bg-black/10 h-[15vh] backdrop-blur-2xl rounded-full max-w-[500px] mx-auto
-        px-5 flex justify-between items-center text-2xl text-white/30" id="scrollspy1">
+        <div className="sm:space-x-2 w-full bg-black/10 h-[15vh] backdrop-blur-2xl rounded-full max-w-[500px] lg:max-w-[40vw] mx-auto
+        px-[3vw] flex justify-between items-center text-2xl text-white/30" id="scrollspy1">
 
           <Link
             to="home"

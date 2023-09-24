@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // components
 import Banner from './components/Banner';
 import Header from './components/Header';
@@ -16,34 +16,65 @@ import Github from './components/Github';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+  // borderColor: "cyan",
+  // color: "cyan"
+};
+
 const App = () => {
-  // const newLocal = <div className='h-[4000px]'></div>;
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, [])
 
 
 
   return (
     <div className='bg-site bg-no-repeat bg-cover overflow-hidden'>
+      {
+        loading ?
+          <div className='h-[100vh] flex items-center align-middle'>
+            <ClimbingBoxLoader
 
-      <div>
-        <Nav />
-        <div className=''>
-          <Header />
-          <Banner />
+              color="#36d7b7"
+              loading={loading}
+              cssOverride={override}
+              size={25}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
+          :
+          <div>
+            <Nav />
+            <div className=''>
+              <Header />
+              <Banner />
 
-          <About />
-          <Skills />
-          <Work />
-          <Services />
-          <Education />
-          <Contact />
-          <Footer />
+              <About />
+              <Skills />
+              <Work />
+              <Services />
+              <Education />
+              <Contact />
+              <Footer />
 
-        </div>
-        {/* {Back to Home} */}
-        <BackToHome />
-        <ToastContainer />
-        <Github />
-      </div>
+            </div>
+            {/* {Back to Home} */}
+            <BackToHome />
+            <ToastContainer />
+            <Github />
+          </div>
+      }
+
 
 
     </div>

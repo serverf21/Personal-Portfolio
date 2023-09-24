@@ -47,7 +47,7 @@ const Services = () => {
                 See My Blog
               </button>
             </a>
-            <Image src={myImg} alt="name" className='max-w-[25vw] ml-[6vw]' color='white' />
+            <Image src={myImg} alt="name" className='max-w-[25vw]' color='white' />
           </motion.div>
           {/* {services} */}
           <motion.div
@@ -57,13 +57,14 @@ const Services = () => {
             viewport={{ once: false, amount: 0.3 }}
           >
             {/* {service list} */}
-            <div className='flex flex-col align-middle'>
+            <div className='flex flex-col align-middle ml-[5vw]'>
               {services.map((services, index) => {
                 //destructure services
                 const { name, description, link } = services;
-                return <div className="mb-[5vh] md:mb-[2vh] flex bg-gradient-to-r from-slate-900 via-amber-950 rounded-lg to-gray-900 p-5 shadow-xl shadow-stone-800 transition-all hover:scale-110 duration-300"
+                return <div className="mb-[5vh] md:mb-[2vh] flex bg-gradient-to-r from-slate-900 via-amber-950
+                rounded-lg to-gray-900 p-5 shadow-xl shadow-stone-800 transition-all hover:scale-110 duration-300"
                   key={index}>
-                  <div className='max-w-[450px] mr-[2vw]'>
+                  <div className='min-w-[20vw] max-w-[70vw] md:mr-[4vw]'>
                     <h3 className='text-[20px] tracking-wider font-primary
                     font-semibold mb-6'>{name}</h3>
                     <div className='font-thin leading-tight text-sm text-cyan-200'>{description}</div>

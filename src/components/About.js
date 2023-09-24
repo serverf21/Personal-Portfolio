@@ -22,18 +22,18 @@ const About = () => {
   // mix-blend-exclusion
   return (
     <section className='section sm:bottom-2 bg-cyan-950' id="about" ref={ref}>
-      <div className="container mx-auto">
+      <div className="container md:mx-auto md:flex md:justify-center">
 
-        <div className='flex flex-col lg:flex-row
-        lg:items-center h-screen'>
+        <div className='flex flex-col items-center align-middle justify-center lg:flex-row
+        lg:items-center h-screen lg:space-x-[2vw] md:p-4'>
           {/* {img} */}
           <motion.div
             variants={fadeIn('right', 0.3)}
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="invisible md:flex-1 md:bg-about md:bg-contain md:bg-no-repeat md:h-[550px]
-           md:bg-top md:visible">
+            className="invisible sm:flex-1 sm:bg-about sm:bg-contain sm:bg-no-repeat md:h-[90vh] md:w-[40vw]
+            sm:bg-center sm:visible w-[50vw] ">
           </motion.div>
           {/* {text} */}
           <motion.div
@@ -41,11 +41,11 @@ const About = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1">
-            <h2 className='h2 text-accent text-5xl font-tertiary'>Meet the Developer</h2>
-            <h4 className='h4 mb-4'>I'm a software developer with almost 3 years of experience.</h4>
+            className="flex-1 xl:leading-9">
+            <h2 className='h2 text-accent text-5xl lg:text-[5vh] font-tertiary'>Meet the Developer</h2>
+            <h4 className='h4 mb-4 lg:text-[2.5vh]'>I'm a software developer with almost 3 years of experience.</h4>
 
-            <p className='text-base font-extralight'>
+            <p className='text-base font-extralight xl:text-[2vh] xl:leading-9 xl:w-[700px]'>
 
               My passion lies in crafting innovative solutions using MERN Stack, exploring the intricacies of &nbsp;
               <span className='text-yellow-400'>Blockchain (Smart Contracts and Hyperledgers)</span>, venturing into
@@ -106,7 +106,7 @@ const About = () => {
                 </button>
               </Link>
               <a href="https://drive.google.com/file/d/1izGevUmhfBDRbWRQ6Pd07kV2Q08E7m1g/view?usp=sharing" target="_blank" rel="noreferrer">
-                <button className='btn btn-lg text-blue-950
+                <button className='btn btn-lg
                 hover:text-blue-950 hover:shadow-[inset_13rem_0_0_0] hover:shadow-[#A0C1D1] duration-[400ms,700ms]
                 transition-[color,box-shadow] border-b-4 border-l-2 shadow-lg border-blue-700'>
                   Resume

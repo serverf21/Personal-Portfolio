@@ -21,7 +21,7 @@ const Skills = () => {
     return (
         <section className='section min-h-fit top-0 pt-10' id="skills">
             <div className="container mx-auto align-middle">
-                <div className='gap-x-5 gap-y-6 md:gap-y-2 align-middle'>
+                <div className='md:gap-x-5 gap-y-6 md:gap-y-2 align-middle'>
                     {/* <!--   *******  Main Heading Starts  *******   --> */}
                     <motion.div
                         variants={fadeIn('top', 0.3)}
@@ -44,7 +44,7 @@ const Skills = () => {
                             viewport={{ once: false, amount: 0.3 }}
                             className="sm:mx-auto flex justify-center flex-col align-top bg-gray-900 border rounded-xl">
 
-                            <div className="md:max-w-[25vw] md:min-w-[20vw] mx-5">
+                            <div className="lg:max-w-[25vw] lg:min-w-[20vw] mx-5">
                                 <h1 className="title-text">Web Development</h1>
 
                                 <div className="flex flex-row flex-wrap justify-center">
@@ -133,7 +133,7 @@ const Skills = () => {
                                 initial="hidden"
                                 whileInView={"show"}
                                 viewport={{ once: false, amount: 0.3 }}
-                                className="md:max-w-[25vw] md:min-w-[20vw] mx-2">
+                                className="lg:max-w-[25vw] lg:min-w-[20vw] mx-2">
                                 <h1 className="title-text">Blockchain Development</h1>
 
                                 <div className="flex flex-row flex-wrap justify-center">
@@ -177,7 +177,7 @@ const Skills = () => {
                                 initial="hidden"
                                 whileInView={"show"}
                                 viewport={{ once: false, amount: 0.5 }}
-                                className="md:max-w-[25vw] md:min-w-[20vw] mx-2">
+                                className="lg:max-w-[25vw] lg:min-w-[20vw] mx-2">
                                 <h1 className="title-text">Artificial Intelligence</h1>
                                 <div className="flex flex-row flex-wrap justify-center">
                                     <div className="group relative overflow-hidden h-[8vh] w-[8vh]
@@ -227,7 +227,7 @@ const Skills = () => {
                             viewport={{ once: false, amount: 0.3 }}
                             className="sm:mx-auto flex justify-center flex-col align-top">
 
-                            <div className="md:max-w-[25vw] md:min-w-[20vw] mx-5">
+                            <div className="lg:max-w-[25vw] lg:min-w-[20vw] mx-5">
                                 <h1 className="title-text">Cloud/Databases</h1>
 
                                 <div className="flex flex-row flex-wrap justify-center">
@@ -270,7 +270,7 @@ const Skills = () => {
 
                             </div>
 
-                            <div className="md:max-w-[25vw] md:min-w-[20vw] mx-5">
+                            <div className="lg:max-w-[25vw] lg:min-w-[20vw] mx-5">
                                 <h1 className="title-text">DevOps</h1>
                                 <div className="flex flex-row flex-wrap justify-center">
                                     <div className="group relative overflow-hidden h-[8vh] w-[8vh]
@@ -295,7 +295,7 @@ const Skills = () => {
                                 </div>
                             </div>
 
-                            <div className="md:max-w-[25vw] md:min-w-[20vw] mx-5">
+                            <div className="lg:max-w-[25vw] lg:min-w-[20vw] mx-5">
                                 <h1 className="title-text">Mobile Development</h1>
                                 <div className="flex flex-row flex-wrap justify-center">
                                     <div className="group relative overflow-hidden h-[13vh] w-[13vh]

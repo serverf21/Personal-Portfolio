@@ -77,7 +77,7 @@ const Contact = () => {
             whileInView={'show'}
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 border rounded-2xl flex flex-col gap-y-6
-          pb-24 p-6 items-start">
+          pb-24 p-6 items-start sm:w-[70vw] lg:w-[40vw]">
             <input className="bg-transparent border-b py-3 outline-none w-full
             placeholder:text-white focus:border-accent transition-all" type="text"
               placeholder="Your name"
@@ -101,7 +101,7 @@ const Contact = () => {
             />
 
             <button className='btn btn-lg
-            hover:text-blue-950 hover:shadow-[inset_15rem_0_0_0] hover:shadow-[#A0C1D1] duration-[400ms,700ms]
+            hover:text-blue-950 hover:shadow-[inset_13rem_0_0_0] hover:shadow-[#A0C1D1] duration-[400ms,700ms]
             transition-[color,box-shadow] border-b-4 border-l-2 shadow-lg border-blue-700'
               onClick={PostData}>
               Send Message
