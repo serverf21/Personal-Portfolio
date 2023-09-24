@@ -2,32 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  -section-bg: linear-gradient(to bottom left,hsla(0,3%,6%,.582),rgba(12,8,24,.904));
+  --image-gradient: linear-gradient(
+    to bottom left,
+    rgba(17, 16, 16, 0.678),
+    rgba(12, 10, 22, 0.863)
+  );
+  filter: brightness(1.2);
+}
+
 .btn {
   background: linear-gradient(
     92.23deg,
-    #ff56f6 21.43%,
-    #b936ee 50.63%,
-    #3bace2 100%,
+    /* #00838F 21.43%, */
+    #7750b6 50.63%,
+    #51b9e9 100%,
     #406aff 117.04%
   );
-  box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
+  /* background: #3D0814; */
+  box-shadow: 16px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
 }
+/* px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg */
 
 .btn:hover {
   background: linear-gradient(
     92.23deg,
-    #406aff 21.43%,
-    #3bace2 50.63%,
-    #b936ee 100%,
+    #5f80f8 21.43%,
+    #5dbbe6 50.63%,
+    #c560ed 100%,
     #ff56f6 117.04%
   );
+  color: rgb(11, 59, 59);
 }
 
 .gradient,
 .active {
   background: linear-gradient(
     92.23deg,
-    #406aff 21.43%,
+    #5d7ff8 21.43%,
     #3bace2 50.63%,
     #b936ee 100%,
     #ff56f6 117.04%
@@ -66,11 +79,16 @@
     @apply bg-gradient-to-r text-transparent bg-clip-text from-[#42A6E3] to-[#FF56F6] font-bold font-primary hover:from-[#FF56F6] hover:to-[#42A6E3];
   }
   .section {
-    @apply py-8 lg:py-24 lg:h-screen flex items-center;
+    @apply py-16 lg:py-24 lg:h-screen flex items-center min-h-[120vh] bottom-0;
   }
 }
 
-
+@media (min-width: 960px) {
+  .section {
+    margin-bottom: 20px; /* Adjust the margin value as needed */
+    min-height: 100vh;
+  }
+}
 /* Education and Experience Section */
 .education-box .education-content::before{
   content: '';
@@ -82,6 +100,11 @@
   border-radius: 50%;
   top: 0;
   left: -0.5rem;
+  /* color: #ba40c3; */
+}
+
+.sign_img_color{
+  filter: invert(10%) sepia(88%) saturate(6980%) hue-rotate(295deg) brightness(99%) contrast(96%);
 }
 
 
@@ -99,12 +122,14 @@
 
 .title-text {
   text-align: center;
-  background-color: rgb(207, 20, 220);
+  background-color: #01636e;
   color: #fff;
   font-weight: 400;
   border-radius: 50px;
-  margin-top: 15px;
-  margin-bottom: 30px;
+  margin-top: 25px;
+  margin-bottom: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .main-container .container .skill-box {
@@ -140,24 +165,24 @@
 
 .skill-per.css {
   width: 80%;
-  animation-delay: 0.1s;
+  animation-delay: 0.4s;
 }
 
 .skill-per.javascript{
   width: 60%;
-  animation-delay: 0.2s;
+  animation-delay: 0.5s;
 }
 .skill-per.nodejs{
   width: 40%;
-  animation-delay: 0.3s;
+  animation-delay: 0.6s;
 }
 .skill-per.reactjs{
   width: 70%;
-  animation-delay: 0.3s;
+  animation-delay: 0.7s;
 }
 .skill-per.expressjs{
   width: 75%;
-  animation-delay: 0.3s;
+  animation-delay: 0.8s;
 }
 
 
@@ -196,3 +221,106 @@
   background-color: rgb(234, 138, 218);
   transform: translateX(-50%) rotate(45deg);
 }
+
+/* Home Page wave animation */
+
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.1s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Footer styling*/
+
+/* --------- */
+/* Footer */
+/* --------- */
+.footer {
+  
+  bottom: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 8px !important ;
+  
+}
+.footer-copywright {
+  text-align: center !important;
+}
+
+.footer-body {
+  z-index: 1;
+  display: flex;
+  text-align: center !important;
+  justify-content: center;
+  min-height: 20vh;
+}
+
+@media (max-width: 767px) {
+  .footer-copywright {
+    text-align: center !important;
+  }
+
+  .footer-body {
+    text-align: center !important;
+    
+  }
+}
+
+.footer h3 {
+  font-size: 1em;
+  color: white !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+}
+.footer-icons {
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+  padding: 0 !important;
+  display: flex;
+  flex-wrap: row;
+}
+
+.blockquote-footer {
+  color: #a588c0 !important;
+}
+
+.new-bg{
+  position: relative;
+  z-index: -1;
+  background-image:  url(./assets/home-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: contain;
+  padding-bottom: 30px !important;
+  padding-top: 30px !important;
+  filter: contrast(1.3) brightness(0.7);
+}
+

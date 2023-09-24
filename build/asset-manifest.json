@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.90900b75.css",
+    "main.js": "/static/js/main.70514bbd.js",
+    "static/media/home-bg.jpg": "/static/media/home-bg.514ddb2ba5b970e3a25d.jpg",
+    "static/media/sign.png": "/static/media/sign.8ecd8a629abaf4e1a9da.png",
+    "static/media/webrtc.png": "/static/media/webrtc.daf8bb5736a3d52ca46f.png",
+    "static/media/self_driving.png": "/static/media/self_driving.6b937b76163b0f9d0e18.png",
+    "static/media/service.png": "/static/media/service.23a4c64157eeee501ce3.png",
+    "static/media/racing.png": "/static/media/racing.41f7d14d96d9be7d5624.png",
+    "static/media/food_delivery.png": "/static/media/food_delivery.ff5d30de0e43f9eb791a.png",
+    "static/media/dsocial.png": "/static/media/dsocial.2565baa508f6697ee5f8.png",
+    "static/media/blog.png": "/static/media/blog.60a09de42678d43c4da3.png",
+    "static/media/trello.jpg": "/static/media/trello.7a5e06ee16c8203fde1b.jpg",
+    "static/media/site-bg.jpg": "/static/media/site-bg.54724d703024833ef9c6.jpg",
+    "static/media/threads.png": "/static/media/threads.fb761f3adce45f2eb02b.png",
+    "static/media/cover.png": "/static/media/cover.a05f4c3e9550ea534412.png",
+    "static/media/home-main.svg": "/static/media/home-main.541f8179af8209ce03cc.svg",
+    "index.html": "/index.html",
+    "main.90900b75.css.map": "/static/css/main.90900b75.css.map",
+    "main.70514bbd.js.map": "/static/js/main.70514bbd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90900b75.css",
+    "static/js/main.70514bbd.js"
+  ]
+}

@@ -8,7 +8,7 @@ module.exports = {
     },
     container: {
       padding: {
-        DEFAULT: '15px',
+        DEFAULT: '30px',
       },
     },
     screens: {
@@ -20,12 +20,14 @@ module.exports = {
     extend: {
       colors: {
         primary: '#0a0a0a',
-        accent: '#B809C3',
+        accent: '#ba40c3',
       },
       backgroundImage: {
         site: "url('./assets/site-bg.jpg')",
-        about: "url('./assets/about.png')",
-        services: "url('./assets/services.png')",
+        about: "url('./assets/home-main.svg')",
+        // services: "url('./assets/services.png')",
+        stars: "url('./assets/stars.jpg')"
+
       },
     },
   },
