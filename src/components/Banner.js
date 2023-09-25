@@ -95,7 +95,7 @@ const Banner = () => {
                   </button>
                 </Link>
               </div>
-              <a href="https://drive.google.com/file/d/1izGevUmhfBDRbWRQ6Pd07kV2Q08E7m1g/view?usp=sharing"
+              <a href="https://drive.google.com/file/d/1lYM71UiSuLAXj0cFr6pUPS_MpQCOD0UQ/view?usp=sharing"
                 target="_blank" rel="noreferrer">
                 <div
                   className="px-4 py-3 border-b-4 border-cyan-200 text-cyan-200 hover:text-white hover:bg-cyan-700
