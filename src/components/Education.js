@@ -85,6 +85,29 @@ const Education = () => {
                             <div className="column-row flex-1 lg:ml-10">
                                 <h2 className="h2 text-cyan-500 title-[2.5rem] m-[1rem] mb-[2vh]">Experience</h2>
                                 <div className="education-box border-l-2 border-opacity-40 border-l-cyan-800 mr-5">
+                                    {/* Experience No. 1 */}
+                                    <motion.div
+                                        variants={fadeIn('right', 0.3)}
+                                        initial="hidden"
+                                        whileInView={"show"}
+                                        viewport={{ once: false, amount: 0.3 }}
+                                        className="education-content relative pl-[2rem] my-[1vh]">
+                                        <div className="content relative p-[1rem] bg-gray-900 shadow-slate-800 shadow-sm bg-opacity-50 rounded-lg mb-2">
+                                            <div className="year flex flex-row items-center text-sm text-gradient font-tertiary">
+                                                <img className="max-h-[30px] pr-[1rem]"
+                                                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAThJREFUaEPtWcENgzAMND8yRjYpk7WdrGzCGOTXKqhINIIY4wgT9fJCIo59d+Ei4oYqH03l9RMAWCt4WIGxHd7L4l3worW08XNuUdJlwdoCtPEAoGVQG79LgbEdbkR0/06Oz2ePpwv+kUua/QZSls6ufpGvc8H3a/k3AYztEJHP7BvWPqXuXfCdFMCPTRojqB4AbZ0zuS10JQX0AKQnrXbL7bXZ3QoAgFASKHChQ2zSDi4k3MLFp0OB4pQKF4QCKWEpI5xvS99z+dgfGs5GASC5xZASBgWEJqKeDhdSU6hcAApwviz1ec6GuXxwIY5B7XsowJ2MSlMRh8OFxJQVDvhLBV5EZNETWNXuiAJXArDZ6MhdLUb2IwjzkbvWZLuUho2OuSMT2V/tzkRmWQDm9DMFAIC1QtUr8AE8WCdAvpj18wAAAABJRU5ErkJggg=="
+                                                    alt=""
+                                                />
+                                                December 2023 - Present
+                                            </div>
+                                            <h3 className="h3 mb-0 text-xl">Full-Stack Developer</h3>
+                                            <p>(Deployed at Walmart)</p>
+                                            <h4>CA-One tech cloud</h4>
+                                            {/* <p className="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis quis magni recusandae officia dicta praesentium.</p> */}
+                                        </div>
+                                    </motion.div>
+
+                                    {/* Experience No. 2 */}
                                     <motion.div
                                         variants={fadeIn('right', 0.3)}
                                         initial="hidden"
