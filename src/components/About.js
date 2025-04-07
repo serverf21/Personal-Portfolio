@@ -105,7 +105,7 @@ const About = () => {
                   Say "Hi"! &nbsp; <span className='text-2xl'>🙋🏽‍♂️</span>
                 </button>
               </Link>
-              <a href="https://drive.google.com/file/d/1aW_dJ68ph9jjVqQeoEh4QZ7GIscVbOzP/view?usp=sharing" target="_blank" rel="noreferrer">
+              <a href="https://drive.google.com/file/d/1nlgDTjhGr3HVtlqxxrziXxDrSN_-QMVh/view?usp=sharing" target="_blank" rel="noreferrer">
                 <button className='btn btn-lg
                 hover:text-blue-950 hover:shadow-[inset_13rem_0_0_0] hover:shadow-[#A0C1D1] duration-[400ms,700ms]
                 transition-[color,box-shadow] border-b-4 border-l-2 shadow-lg border-blue-700'>
