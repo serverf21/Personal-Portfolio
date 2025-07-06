@@ -9,6 +9,11 @@ import { Image } from 'react-bootstrap';
 
 //services data
 const services = [{
+  name: 'Top 10 Emerging Job Roles in AI',
+  description: "Let’s cut to the chase: If you’re reading this, you already know the world is being eaten alive by AI. But as the robots “take over,” they’re actually creating more weird, wonderful, and totally unexpected jobs than ever before. Ready to laugh, learn, and low- key panic about your own career ? ",
+  link: 'https://sarvagya-next-sanity-blog.vercel.app/posts/top-10-roles-in-ai'
+},
+{
   name: 'ClerkJS - React Auth made easy',
   description: 'Imagine building your React, Next.js, or React Native app, and authentication is a breeze – thanks to ClerkJS. It is like a coding buddy that does all the authentication hassle for you.',
   link: 'https://sarvagya-next-sanity-blog.vercel.app/posts/clerkjs-react-auth-made-easy'
@@ -17,11 +22,6 @@ const services = [{
   name: 'Threads vs Twitter: Let us talk design!',
   description: 'Imagine peeking under the hood of tech giants! Delve into the architecture showdown between the intricate microservices of Twitter and  multimedia-driven design of Threads.',
   link: 'https://sarvagya-next-sanity-blog.vercel.app/posts/threads-vs-twitter'
-},
-{
-  name: 'Unveiling Technological Shifts',
-  description: "From Apple's tire industry dominance to revolutionary organ-healing coatings, explore captivating analytical insights as I decode complex discoveries into captivating stories.",
-  link: 'https://sarvagya-next-sanity-blog.vercel.app/posts/unveiling-technological-transformations'
 }
 ];
 

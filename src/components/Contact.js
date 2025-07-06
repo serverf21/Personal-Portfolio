@@ -14,8 +14,15 @@ const Contact = () => {
     message: '',
   });
 
+  const isInvalidResponse = (details?.name && details?.name <= 0) ||
+    (details?.email && details?.email <= 0) ||
+    (details?.message && details?.message <= 0)
+
   const PostData = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    if (isInvalidResponse === true) {
+      return;
+    }
 
     const { name, email, message } = details;
 

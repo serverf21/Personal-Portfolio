@@ -62,17 +62,18 @@ const Banner = () => {
               flex flex-row lg:justify-start justify-center py-6 xl:space-y-11">
 
               <TypeAnimation sequence={[
-                'Full-Stack Engineer',
+                'Full Stack Developer',
                 2000,
-                'MERN and Next.js Developer',
+                'AI Engineer',
                 2000,
                 'Blockchain Developer',
                 2000,
-                'AI/ML Engineer',
+                'LLM Application Developer',
+                2000,
+                'AI Agent Developer',
                 2000,
                 'React-Native Developer',
                 2000,
-
               ]}
                 speed={50}
                 className="text-cyan-700 pt-2 font-extrabold text-2xl"
