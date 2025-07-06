@@ -14,13 +14,11 @@ const Contact = () => {
     message: '',
   });
 
-  const isInvalidResponse = (details?.name && details?.name <= 0) ||
-    (details?.email && details?.email <= 0) ||
-    (details?.message && details?.message <= 0)
-
   const PostData = async (e) => {
     e.preventDefault();
-    if (isInvalidResponse === true) {
+    if (!details?.name || details?.name?.length <= 0 ||
+      !details?.email || details?.email?.length <= 0 ||
+      !details?.message || details?.message.length <= 0) {
       return;
     }
 
