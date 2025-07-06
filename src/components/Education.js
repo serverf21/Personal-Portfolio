@@ -101,8 +101,8 @@ const Education = () => {
                                                 December 2023 - Present
                                             </div>
                                             <h3 className="h3 mb-0 text-xl">Full-Stack Developer</h3>
-                                            <p>(Deployed at Walmart)</p>
-                                            <h4>CA-One tech cloud</h4>
+                                            <p>(Full Stack AI Developer)</p>
+                                            <h4>Walmart</h4>
                                             {/* <p className="text-sm">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis quis magni recusandae officia dicta praesentium.</p> */}
                                         </div>
                                     </motion.div>
