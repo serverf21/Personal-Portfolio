@@ -1,19 +1,15 @@
-import React from 'react';
-//images
+import React, { memo } from 'react';
 import MyImage from '../assets/cover.png';
-//icons
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiLeetcode, SiHackerrank, SiCodingninjas } from 'react-icons/si';
-//type animation
 import { TypeAnimation } from 'react-type-animation';
-//motion
 import { motion } from 'framer-motion';
 import { fadeIn } from '../variants';
 import { Link } from 'react-scroll';
 import { HiArrowNarrowRight } from 'react-icons/hi';
-import Image from 'react-bootstrap/Image';
+import LazyImage from './LazyImage';
 
-const Banner = () => {
+const Banner: React.FC = memo(() => {
 
 
 
@@ -25,12 +21,17 @@ const Banner = () => {
 
           {/* {image} */}
           <div className='flex justify-center items-center align-middle mx-auto md:mb-8 lg:mb-0'>
-            <motion.div variants={fadeIn('down', 0.5)}
-              initial="hidden" whileInView={'show'}
-
-              className="hidden md:flex flex-1 max-w-[40vw]
-          md:mx-auto justify-center mix-blend-lighten brightness-150 md:ml-[10vw] lg:ml-[15vw] xl:ml-[3vw]">
-              <Image src={MyImage} alt='' className='max-w-[40vw]' fluid />
+            <motion.div 
+              variants={fadeIn('down', 0.5)}
+              initial="hidden" 
+              whileInView="show"
+              className="hidden md:flex flex-1 max-w-[40vw] md:mx-auto justify-center mix-blend-lighten brightness-150 md:ml-[10vw] lg:ml-[15vw] xl:ml-[3vw]"
+            >
+              <LazyImage 
+                src={MyImage} 
+                alt="Sarvagya Saxena - Full Stack Developer"
+                className='max-w-[40vw] rounded-lg'
+              />
             </motion.div>
           </div>
 
@@ -136,6 +137,8 @@ const Banner = () => {
       </div>
     </section>
   );
-};
+});
+
+Banner.displayName = 'Banner';
 
 export default Banner;
