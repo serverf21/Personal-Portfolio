@@ -55,9 +55,10 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/node": "^24.1.0",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
     "@types/react-scroll": "^1.8.10",
+    "@types/three": "^0.184.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.35",
     "framer-motion": "^12.40.0",

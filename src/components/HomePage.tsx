@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import About from '@/components/About.tsx';
+import About from '@/components/About';
 import BackToTop from '@/components/BackToTop';
 import Contact from '@/components/Contact';
 import CustomCursor from '@/components/CustomCursor';
