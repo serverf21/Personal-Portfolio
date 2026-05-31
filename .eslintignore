@@ -1,0 +1,14 @@
+src/index.js
+src/App.tsx
+src/index.css
+src/components/About.js
+src/components/Work.js
+src/components/Education.js
+src/components/Nav.js
+src/components/Header.js
+src/components/Services.js
+src/components/Footer.js
+src/components/Github.js
+src/components/BackToHome.js
+src/components/Banner.tsx
+src/components/LazyImage.tsx

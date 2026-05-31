@@ -2,4 +2,7 @@
 
 # dependencies
 /node_modules
+.next
+out
 .vercel
+build
