@@ -1,0 +1,121 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-light: #fafaf7;
+  --text-dark: #111110;
+  --text-light: #f0eee6;
+  --orange: #ff6b35;
+  --cyan: #00d4ff;
+  --violet: #7b61ff;
+  --yellow: #ffd23f;
+  --font-display: 'Clash Display', system-ui, sans-serif;
+  --font-body: var(--font-body-next), system-ui, sans-serif;
+  --font-mono: var(--font-mono-next), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+html,
+body {
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+  cursor: none;
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    cursor: auto;
+  }
+}
+
+::selection {
+  background: color-mix(in oklab, var(--orange), white 20%);
+  color: var(--text-dark);
+}
+
+@layer utilities {
+  .text-gradient-forge {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-forge-orange via-forge-cyan to-forge-violet;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md;
+  }
+
+  .section-dark {
+    @apply bg-canvas-dark text-ink-dark;
+  }
+
+  .section-light {
+    @apply bg-canvas-light text-ink-light;
+  }
+
+  .nav-link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-x-0 after:bg-forge-orange after:transition-transform after:duration-300 hover:after:scale-x-100;
+  }
+
+  .bracket-accent::before {
+    content: '[';
+    color: var(--orange);
+    margin-right: 0.25rem;
+  }
+
+  .bracket-accent::after {
+    content: ']';
+    color: var(--orange);
+    margin-left: 0.25rem;
+  }
+
+  .shine-layer {
+    @apply pointer-events-none absolute inset-0 overflow-hidden rounded-2xl;
+  }
+
+  .shine-layer::after {
+    content: '';
+    @apply absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-300;
+    left: -40%;
+  }
+
+  .group:hover .shine-layer::after {
+    @apply opacity-100;
+    animation: shine-sweep 0.65s ease-out forwards;
+  }
+}
+
+.interactive {
+  cursor: none;
+}
+
+@media (max-width: 767px), (pointer: coarse) {
+  .interactive {
+    cursor: pointer;
+  }
+}

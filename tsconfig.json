@@ -18,10 +18,29 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "src",
-    "src/types"
+    "src/types",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/App.tsx",
+    "src/index.js",
+    "src/components/**/*.js",
+    "src/components/Banner.tsx",
+    "src/components/LazyImage.tsx"
   ]
 }

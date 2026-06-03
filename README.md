@@ -1,41 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sarvagya Saxena — Portfolio (Next.js)
 
-## Available Scripts
+Personal portfolio built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **Three.js** (@react-three/fiber + drei). Visual theme: **Bright Cosmic Forge**.
 
-#Add cursor moving animation
+Live site: [https://sarvagyasaxena.tech](https://sarvagyasaxena.tech)
 
-In the project directory, you can run:
+## Requirements
 
-### npm init
+- **Node.js 24.x** (see `package.json` `engines`)
 
-Post that, install the required libraries and run - 
+## Setup
 
-### `npm start`
+```bash
+npm install
+npm run dev
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-This is a personal portfolio website temlate you can utilize to make your own portfolio website. Since, it is designed using react, the template is completely responsive and can be opened on browsers of any device including mobile phones, tablets, and PC (all sizes).
-If you have better ideas regarding the placement, design, execution or the code, feel free to fork the repo and try it out.
+## Scripts
 
-Preview of my portfolio website - 
+| Command        | Description              |
+|----------------|--------------------------|
+| `npm run dev`  | Start development server |
+| `npm run build`| Production build         |
+| `npm run start`| Run production server    |
+| `npm run lint` | ESLint (Next.js)         |
 
+## Project structure
 
-![1](https://github.com/serverf21/Personal-Portfolio/assets/30923855/b01578e5-c656-44b4-b558-e6de88b134f4)
+```
+src/
+├── app/              # App Router (layout, page, globals)
+├── components/       # UI + Three.js scenes
+├── lib/              # constants, animations, hooks
+└── assets/           # Images (portrait, projects)
+```
 
-![2](https://github.com/serverf21/Personal-Portfolio/assets/30923855/91d187d5-d63f-43de-a120-9ccb7c5ed38d)
+## Customization
 
-![3](https://github.com/serverf21/Personal-Portfolio/assets/30923855/fac9739e-6fde-4f16-b123-8d24a0877f71)
+- **Content**: edit `src/lib/constants.ts` (projects, experience, skills, social links).
+- **Resume**: place `resume.pdf` in `public/`.
+- **Contact form**: Firebase Realtime Database endpoint in `SITE.firebaseContactUrl`.
 
-![4](https://github.com/serverf21/Personal-Portfolio/assets/30923855/065c8de6-163c-4755-b27c-60e82a095d90)
+## Deploy
 
-![5](https://github.com/serverf21/Personal-Portfolio/assets/30923855/724858f7-bc0c-4e73-9768-8f691efd778f)
+Works on Vercel with default Next.js settings. Set production domain canonical to `https://sarvagyasaxena.tech` (configured in `src/app/layout.tsx`).
 
-![6](https://github.com/serverf21/Personal-Portfolio/assets/30923855/bd800daf-674a-4d86-bc43-9e488f0fe7bb)
+## Tech highlights
 
-![7](https://github.com/serverf21/Personal-Portfolio/assets/30923855/841ea6d0-9cc3-4961-ad0c-7a81ed7440fd)
-
-
-Wanna work together? Ping me at
-
-sarvagyasaxena.2102@gmail.com
+- SSR/SSG via Next.js (fixes blank JS-only initial load)
+- Three.js canvases loaded with `dynamic(..., { ssr: false })` and viewport lazy-mount
+- Mobile: CSS gradient fallbacks instead of WebGL on viewports `< 768px`
+- Lenis smooth scroll, custom cursor (desktop), scroll progress bar

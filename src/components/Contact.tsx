@@ -1,234 +1,149 @@
-import React, { useState, useCallback } from 'react';
+'use client';
+
 import { motion } from 'framer-motion';
-import { fadeIn } from '../variants';
+import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FiCheck, FiLoader } from 'react-icons/fi';
+import { sectionReveal, fadeUpItem, viewportOnce } from '@/lib/animations';
+import { SITE, SOCIAL } from '@/lib/constants';
 
-interface ContactForm {
-  name: string;
-  email: string;
-  message: string;
-}
+type FormState = { name: string; email: string; message: string };
+type FormErrors = Partial<Record<keyof FormState, string>>;
 
-interface FormErrors {
-  name?: string;
-  email?: string;
-  message?: string;
-}
-
-const Contact: React.FC = () => {
-  const [details, setDetails] = useState<ContactForm>({
-    name: '',
-    email: '',
-    message: '',
-  });
-  
+export default function Contact() {
+  const [details, setDetails] = useState<FormState>({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<FormErrors>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
 
-  const validateEmail = (email: string): boolean => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const validateForm = useCallback((): FormErrors => {
-    const newErrors: FormErrors = {};
-    
-    if (!details.name.trim()) {
-      newErrors.name = 'Name is required';
-    } else if (details.name.trim().length < 2) {
-      newErrors.name = 'Name must be at least 2 characters long';
-    }
-    
-    if (!details.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!validateEmail(details.email)) {
-      newErrors.email = 'Please enter a valid email address';
-    }
-    
-    if (!details.message.trim()) {
-      newErrors.message = 'Message is required';
-    } else if (details.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters long';
-    }
-    
-    return newErrors;
+  const validate = useCallback((): FormErrors => {
+    const next: FormErrors = {};
+    if (!details.name.trim()) next.name = 'Name is required';
+    if (!details.email.trim()) next.email = 'Email is required';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(details.email)) next.email = 'Invalid email';
+    if (!details.message.trim()) next.message = 'Message is required';
+    else if (details.message.trim().length < 10) next.message = 'At least 10 characters';
+    return next;
   }, [details]);
 
-  const PostData = useCallback(async (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    const formErrors = validateForm();
+    const formErrors = validate();
     setErrors(formErrors);
-    
-    if (Object.keys(formErrors).length > 0) {
-      toast.error('Please fix the errors below', {
-        position: "top-center",
-        autoClose: 3000,
-        theme: "dark",
-      });
+    if (Object.keys(formErrors).length) {
+      toast.error('Please fix the errors below');
       return;
     }
 
-    setIsSubmitting(true);
-    
+    setStatus('loading');
     try {
-      const { name, email, message } = details;
-      
-      const res = await fetch("https://personal-portfolio-d8375-default-rtdb.firebaseio.com/sarvagyacontact.json", {
+      const res = await fetch(SITE.firebaseContactUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          message: message.trim(),
+          name: details.name.trim(),
+          email: details.email.trim(),
+          message: details.message.trim(),
           timestamp: new Date().toISOString(),
-        })
+        }),
       });
-
-      if (res.ok) {
-        toast.success(`Thank you for reaching out, ${name}! I'll be in touch shortly. 🌟`, {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "dark",
-        });
-        
-        // Reset form
-        setDetails({ name: '', email: '', message: '' });
-        setErrors({});
-      } else {
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      toast.error('Failed to send message. Please try again or email me directly.', {
-        position: "top-center",
-        autoClose: 5000,
-        theme: "dark",
-      });
-    } finally {
-      setIsSubmitting(false);
+      if (!res.ok) throw new Error('Failed');
+      setStatus('success');
+      toast.success(`Thanks ${details.name}! I'll be in touch soon.`);
+      setDetails({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus('idle'), 2500);
+    } catch {
+      setStatus('idle');
+      toast.error('Failed to send. Please email me directly.');
     }
-  }, [details, validateForm]);
+  };
 
-  const handleInputChange = useCallback((field: keyof ContactForm, value: string) => {
-    setDetails(prev => ({ ...prev, [field]: value }));
-    // Clear error when user starts typing
-    if (errors[field]) {
-      setErrors(prev => ({ ...prev, [field]: undefined }));
-    }
-  }, [errors]);
   return (
-    <section className='py-10 mt-20 lg:section bg-cyan-950' id="contact">
-      <div className="container mx-auto">
-        <div className='flex flex-col lg:flex-row align-middle items-center'>
-          {/* text */}
-          <motion.div
-            variants={fadeIn('right', 0.3)}
-            initial='hidden'
-            whileInView={'show'}
-            viewport={{ once: false, amount: 0.3 }}
-            className='flex-1 flex justify-start items-center align-middle'>
-            <div>
-              <h4 className="text-xl uppercase text-pink-300 font-medium mb-2
-              tracking-wide">
-                Get in touch
-              </h4>
-              <h2 className="text-[45px] lg:text-[90px] leading-none mb-12">
-                Let's work <br />
-                together!
-              </h2>
-
-            </div>
-          </motion.div>
-          {/* form */}
-          <motion.form
-            variants={fadeIn('left', 0.3)}
-            initial='hidden'
-            whileInView={'show'}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 border rounded-2xl flex flex-col gap-y-6
-          pb-24 p-6 items-start sm:w-[70vw] lg:w-[40vw]">
-            <div className="w-full">
-              <input 
-                className={`bg-transparent border-b py-3 outline-none w-full
-                placeholder:text-white focus:border-accent transition-all ${
-                  errors.name ? 'border-red-500' : ''
-                }`}
-                type="text"
-                placeholder="Your name"
-                value={details.name}
-                onChange={(e) => handleInputChange('name', e.target.value)}
-                aria-label="Your name"
-                required
-              />
-              {errors.name && (
-                <span className="text-red-400 text-sm mt-1 block">{errors.name}</span>
-              )}
-            </div>
-            
-            <div className="w-full">
-              <input 
-                className={`bg-transparent border-b py-3 outline-none w-full
-                placeholder:text-white focus:border-accent transition-all ${
-                  errors.email ? 'border-red-500' : ''
-                }`}
-                type="email"
-                placeholder="Your email"
-                value={details.email}
-                onChange={(e) => handleInputChange('email', e.target.value)}
-                aria-label="Your email"
-                required
-              />
-              {errors.email && (
-                <span className="text-red-400 text-sm mt-1 block">{errors.email}</span>
-              )}
-            </div>
-            
-            <div className="w-full">
-              <textarea 
-                className={`bg-transparent border-b py-12 outline-none w-full
-                placeholder:text-white focus:border-accent transition-all resize-none mb-12 ${
-                  errors.message ? 'border-red-500' : ''
-                }`}
-                placeholder='Your message'
-                value={details.message}
-                onChange={(e) => handleInputChange('message', e.target.value)}
-                aria-label="Your message"
-                required
-              />
-              {errors.message && (
-                <span className="text-red-400 text-sm mt-1 block">{errors.message}</span>
-              )}
-            </div>
-
-            <button 
-              className='btn btn-lg hover:text-blue-950 hover:shadow-[inset_13rem_0_0_0] hover:shadow-[#A0C1D1] duration-[400ms,700ms]
-              transition-[color,box-shadow] border-b-4 border-l-2 shadow-lg border-blue-700 disabled:opacity-50 disabled:cursor-not-allowed'
-              onClick={PostData}
-              disabled={isSubmitting}
-              type="submit"
-            >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-
-          </motion.form>
-
-        </div>
-        <div className='mb-[25vh]'>
-          <div className='text-pink-300 font-primary font-semibold text-lg'>
-            <h1>Or</h1>
+    <motion.section
+      id="contact"
+      className="section-light py-24 lg:py-32"
+      variants={sectionReveal}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewportOnce}
+    >
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2">
+        <motion.div variants={fadeUpItem}>
+          <span className="rounded-full bg-forge-orange/15 px-3 py-1 font-mono text-xs text-forge-orange">
+            Available for freelance opportunities
+          </span>
+          <h2 className="mt-4 font-display text-4xl font-bold text-ink-light">Let&apos;s Connect</h2>
+          <p className="mt-4 text-ink-light/75">
+            Have a project in mind or want to collaborate? Send a message — I typically reply within
+            48 hours.
+          </p>
+          <p className="mt-6">
+            <a href={`mailto:${SITE.email}`} className="interactive font-mono text-forge-violet hover:underline">
+              {SITE.email}
+            </a>
+          </p>
+          <div className="mt-8 flex gap-4">
+            <a href={SOCIAL[0].href} className="interactive text-ink-light/70 hover:text-forge-orange" aria-label="GitHub">
+              <FaGithub size={22} />
+            </a>
+            <a href={SOCIAL[1].href} className="interactive text-ink-light/70 hover:text-forge-cyan" aria-label="LinkedIn">
+              <FaLinkedin size={22} />
+            </a>
+            <a href={SOCIAL[2].href} className="interactive text-ink-light/70 hover:text-forge-violet" aria-label="Twitter">
+              <FaTwitter size={22} />
+            </a>
           </div>
-          Email me: sarvagyasaxena.2102@gmail.com
-        </div>
-      </div>
-    </section>
-  );
-};
+        </motion.div>
 
-export default Contact;
+        <motion.form
+          variants={fadeUpItem}
+          onSubmit={submit}
+          className="glass-card space-y-5 p-6 text-ink-light lg:p-8"
+        >
+          <div>
+            <input
+              className={`interactive w-full border-b border-ink-light/20 bg-transparent py-3 outline-none focus:border-forge-orange ${errors.name ? 'border-red-500' : ''}`}
+              placeholder="Your name"
+              value={details.name}
+              onChange={(e) => setDetails((d) => ({ ...d, name: e.target.value }))}
+              aria-label="Name"
+            />
+            {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
+          </div>
+          <div>
+            <input
+              type="email"
+              className={`interactive w-full border-b border-ink-light/20 bg-transparent py-3 outline-none focus:border-forge-orange ${errors.email ? 'border-red-500' : ''}`}
+              placeholder="Your email"
+              value={details.email}
+              onChange={(e) => setDetails((d) => ({ ...d, email: e.target.value }))}
+              aria-label="Email"
+            />
+            {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+          </div>
+          <div>
+            <textarea
+              className={`interactive min-h-[140px] w-full resize-none border-b border-ink-light/20 bg-transparent py-3 outline-none focus:border-forge-orange ${errors.message ? 'border-red-500' : ''}`}
+              placeholder="Your message"
+              value={details.message}
+              onChange={(e) => setDetails((d) => ({ ...d, message: e.target.value }))}
+              aria-label="Message"
+            />
+            {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
+          </div>
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="interactive flex w-full items-center justify-center gap-2 rounded-full bg-forge-orange py-3 font-semibold text-canvas-dark transition hover:brightness-110 disabled:opacity-70"
+          >
+            {status === 'loading' && <FiLoader className="animate-spin" />}
+            {status === 'success' && <FiCheck />}
+            {status === 'idle' && 'Send Message'}
+            {status === 'loading' && 'Sending…'}
+            {status === 'success' && 'Sent!'}
+          </button>
+        </motion.form>
+      </div>
+    </motion.section>
+  );
+}
