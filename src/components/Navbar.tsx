@@ -2,12 +2,14 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Fragment, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { NAV_LINKS, SITE } from '@/lib/constants';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [active, setActive] = useState<string>('hero');
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -44,6 +46,10 @@ export default function Navbar() {
 
   const scrollTo = (id: string) => {
     setOpen(false);
+    if (window.location.pathname !== '/') {
+      window.location.href = `/#${id}`;
+      return;
+    }
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -110,14 +116,24 @@ export default function Navbar() {
     <Fragment>
       <header className="pointer-events-auto fixed left-0 right-0 top-0 z-[1000] box-border w-full max-w-[100dvw] overflow-hidden border-b border-white/10 bg-canvas-dark/90 pt-[env(safe-area-inset-top)] shadow-[0_4px_24px_rgba(0,0,0,0.45)] backdrop-blur-md">
         <nav className="mx-auto grid w-full max-w-6xl grid-cols-[1fr_auto] items-center gap-3 px-4 py-3 sm:px-6 md:grid-cols-[auto_1fr_auto] md:py-4">
-          <button
-            type="button"
-            onClick={() => scrollTo('hero')}
-            className="interactive justify-self-start font-display text-xl font-bold text-forge-orange"
-            aria-label="Home"
-          >
-            SS
-          </button>
+          {pathname === '/' ? (
+            <button
+              type="button"
+              onClick={() => scrollTo('hero')}
+              className="interactive justify-self-start font-display text-xl font-bold text-forge-orange"
+              aria-label="Home"
+            >
+              SS
+            </button>
+          ) : (
+            <Link
+              href="/"
+              className="interactive justify-self-start font-display text-xl font-bold text-forge-orange"
+              aria-label="Home"
+            >
+              SS
+            </Link>
+          )}
 
           <ul className="hidden items-center justify-center gap-8 md:col-start-2 md:flex">
             {NAV_LINKS.map((link) => (

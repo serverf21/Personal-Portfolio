@@ -39,16 +39,16 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed left-0 top-0 z-[9999] mix-blend-difference"
+      className="pointer-events-none fixed left-0 top-0 z-[10000]"
       style={{ x: sx, y: sy, translateX: '-50%', translateY: '-50%' }}
       aria-hidden
     >
       <motion.span
-        className="block rounded-full border-2 border-forge-orange bg-forge-orange"
+        className="block rounded-full border-2 border-forge-orange bg-forge-orange shadow-[0_0_0_1px_rgba(255,255,255,0.9),0_2px_8px_rgba(0,0,0,0.25)]"
         animate={{
           width: hovering ? 40 : 10,
           height: hovering ? 40 : 10,
-          backgroundColor: hovering ? 'transparent' : '#FF6B35',
+          backgroundColor: hovering ? 'rgba(255, 107, 53, 0.12)' : '#FF6B35',
         }}
         transition={{ type: 'spring', stiffness: 400, damping: 28 }}
       />

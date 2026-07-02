@@ -11,9 +11,10 @@ import { fadeUpItem } from '@/lib/animations';
 type ProjectCardProps = {
   project: Project;
   className?: string;
+  variant?: 'dark' | 'light';
 };
 
-export default function ProjectCard({ project, className = '' }: ProjectCardProps) {
+export default function ProjectCard({ project, className = '', variant = 'light' }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState('perspective(900px) rotateX(0deg) rotateY(0deg)');
 
@@ -30,6 +31,13 @@ export default function ProjectCard({ project, className = '' }: ProjectCardProp
 
   const reset = () => setTransform('perspective(900px) rotateX(0deg) rotateY(0deg)');
 
+  const isDark = variant === 'dark';
+  const cardSurface = isDark
+    ? 'border-white/15 bg-white/10'
+    : 'border-ink-light/10 bg-white shadow-sm';
+  const titleClass = isDark ? 'text-ink-dark' : 'text-ink-light';
+  const bodyClass = isDark ? 'text-ink-dark/70' : 'text-ink-light/70';
+
   return (
     <motion.article
       variants={fadeUpItem}
@@ -40,7 +48,7 @@ export default function ProjectCard({ project, className = '' }: ProjectCardProp
         ref={cardRef}
         onMouseMove={onMove}
         onMouseLeave={reset}
-        className="interactive relative h-full overflow-hidden rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-md transition-shadow duration-300 hover:shadow-glow"
+        className={`interactive relative h-full overflow-hidden rounded-2xl border p-5 backdrop-blur-md transition-shadow duration-300 hover:shadow-glow ${cardSurface}`}
         style={{ transform, transition: 'transform 0.15s ease-out' }}
       >
         <div className="shine-layer" aria-hidden />
@@ -63,8 +71,8 @@ export default function ProjectCard({ project, className = '' }: ProjectCardProp
             </div>
           )}
         </div>
-        <h3 className="font-display text-xl font-semibold text-ink-light">{project.name}</h3>
-        <p className="mt-2 text-sm text-ink-light/70">{project.description}</p>
+        <h3 className={`font-display text-xl font-semibold ${titleClass}`}>{project.name}</h3>
+        <p className={`mt-2 text-sm ${bodyClass}`}>{project.description}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {project.stack.map((tag) => (
             <span
