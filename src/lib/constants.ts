@@ -182,9 +182,11 @@ export const ABOUT_STATS = [
 export const ABOUT = {
   portrait,
   heroImage,
-  bio: `I'm a Full Stack Developer and Software Engineer at Walmart Global Tech India, with around six years of experience building fast, scalable web applications. I graduated from NIT Silchar, where I learned to care deeply about performance, clean architecture, and thoughtful UX.
+  bio: `AI Systems Engineer with 6+ years building production software and AI platforms at Walmart and Sears.
 
-I love turning complex problems into polished products — from React and Next.js frontends to Node.js APIs, Firebase integrations, and production-ready deployments. When I'm not shipping features, I'm experimenting with 3D visuals, open source, and tools that make developers faster.`,
+I specialize in architecting Agentic AI systems that combine LLMs, APIs, distributed services, vector databases, orchestration frameworks and modern web applications into intelligent business products.
+
+Passionate about designing AI systems that automate real-world enterprise workflows rather than standalone AI demos.`,
 } as const;
 
 export type ExperienceEntry = {
