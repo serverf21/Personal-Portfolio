@@ -1,3 +1,4 @@
 {
-  "installCommand": "corepack enable && corepack prepare pnpm@11.2.2 --activate && pnpm install"
+  "installCommand": "npx --yes pnpm@11.2.2 install",
+  "buildCommand": "npx --yes pnpm@11.2.2 run build"
 }
