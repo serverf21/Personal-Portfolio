@@ -23,16 +23,16 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sarvagyasaxena.tech'),
-  title: 'Sarvagya Saxena — Full Stack Developer',
+  title: 'Sarvagya Saxena — AI Systems Engineer',
   description:
-    'Full Stack Developer & Software Engineer at Walmart Global Tech India. Building fast, scalable web apps with React, Next.js, Node.js, and TypeScript.',
+    'AI Systems Engineer building production Agentic AI, RAG pipelines, and MCP servers at Walmart Global Tech.',
   alternates: {
     canonical: 'https://sarvagyasaxena.tech',
   },
   openGraph: {
-    title: 'Sarvagya Saxena — Full Stack Developer',
+    title: 'Sarvagya Saxena — AI Systems Engineer',
     description:
-      'Full Stack Developer & Software Engineer at Walmart Global Tech India.',
+      'AI Systems Engineer building production Agentic AI, RAG pipelines, and MCP servers at Walmart Global Tech.',
     url: 'https://sarvagyasaxena.tech',
     siteName: 'Sarvagya Saxena',
     locale: 'en_IN',
@@ -40,10 +40,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sarvagya Saxena — Full Stack Developer',
+    title: 'Sarvagya Saxena — AI Systems Engineer',
     creator: '@sarvagyasaxena',
     description:
-      'Full Stack Developer & Software Engineer at Walmart Global Tech India.',
+      'AI Systems Engineer building production Agentic AI, RAG pipelines, and MCP servers at Walmart Global Tech.',
   },
   robots: { index: true, follow: true },
 };

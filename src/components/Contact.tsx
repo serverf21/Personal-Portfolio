@@ -70,7 +70,7 @@ export default function Contact() {
       <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2">
         <motion.div variants={fadeUpItem}>
           <span className="rounded-full bg-forge-orange/15 px-3 py-1 font-mono text-xs text-forge-orange">
-            Available for freelance opportunities
+            Open to conversations about AI systems roles and collaboration
           </span>
           <h2 className="mt-4 font-display text-4xl font-bold text-ink-light">Let&apos;s Connect</h2>
           <p className="mt-4 text-ink-light/75">

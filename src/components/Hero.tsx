@@ -161,7 +161,7 @@ export default function Hero() {
                     {inView ? (
                       <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />
                     ) : (
-                      `0${stat.suffix}`
+                      `${stat.value}${stat.suffix}`
                     )}
                   </p>
                   <p className="mt-1 font-mono text-xs uppercase tracking-wider text-ink-dark/60">

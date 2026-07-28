@@ -5,11 +5,11 @@ import heroImage from '@/assets/cover.png';
 export const SITE = {
   name: 'Sarvagya Saxena',
   role: 'AI Systems Engineer',
-  title: 'AI Systems Engineer & Full Stack Developer',
+  title: 'AI Systems Engineer',
   company: 'Walmart',
   email: 'sarvagyasaxena.2102@gmail.com',
   url: 'https://sarvagyasaxena.tech',
-  resumeUrl: 'https://drive.google.com/file/d/1rPekwiz2ls7cH4eLR1JHJL0LPJqIjdVj/view?usp=sharing',
+  resumeUrl: 'https://drive.google.com/file/d/1LvlyJS3mwNyjocWHq2DNJT3LkrX1FI3j/view?usp=sharing',
   firebaseContactUrl:
     'https://personal-portfolio-d8375-default-rtdb.firebaseio.com/sarvagyacontact.json',
 } as const;
@@ -206,27 +206,19 @@ export const TECHNICAL_ARTICLES: TechnicalArticle[] = [
     tags: ['Next.js', 'Sanity', 'Technical Writing'],
     gradient: 'from-forge-orange to-forge-yellow',
   },
-  {
-    title: 'Building Production RAG Pipelines',
-    description:
-      'Lessons from evaluating retrieval quality, chunking strategies, and agent orchestration in enterprise settings.',
-    href: 'https://github.com/serverf21/rag_lens',
-    date: 'Coming soon',
-    tags: ['RAG', 'LLMs', 'Evaluation'],
-    gradient: 'from-forge-violet to-forge-cyan',
-  },
-  {
-    title: 'MCP Servers for Real-World Automation',
-    description:
-      'Bridging Claude AI with trading APIs and enterprise tools through the Model Context Protocol.',
-    href: 'https://github.com/serverf21/zerodha-mcp-claude',
-    date: 'Coming soon',
-    tags: ['MCP', 'Agentic AI', 'TypeScript'],
-    gradient: 'from-forge-cyan to-forge-violet',
-  },
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    name: 'ComplyMint',
+    description:
+      'Multi-tenant SaaS automating India\'s DPDP Act compliance — LLM-powered gap assessment, privacy notice generation and analysis, regulatory fine prediction, and Data Principal Rights request workflows. Founder and sole engineer, shipped end-to-end including Shopify App Store listing and Razorpay-backed subscription billing.',
+    stack: ['Next.js', 'LLMs', 'SaaS'],
+    live: 'https://www.comply-mint.cloud',
+    gradient: 'from-forge-violet to-forge-yellow',
+    featured: true,
+    category: ['ai', 'product'],
+  },
   {
     name: 'Zerodha Claude MCP',
     description:
@@ -242,7 +234,6 @@ export const PROJECTS: Project[] = [
     description:
       'Multi-agent orchestration with LangGraph — coordinated LLM agents for complex enterprise workflows.',
     stack: ['Python', 'LangGraph', 'LangChain'],
-    github: 'https://github.com/serverf21',
     gradient: 'from-forge-violet to-forge-orange',
     featured: true,
     category: ['ai'],
@@ -279,7 +270,6 @@ export const PROJECTS: Project[] = [
     description:
       'LLM-powered test generation from user stories — outputs Playwright suites with CI integration.',
     stack: ['TypeScript', 'Playwright', 'LLMs'],
-    github: 'https://github.com/serverf21',
     gradient: 'from-forge-cyan to-forge-violet',
     featured: true,
     category: ['platform'],
@@ -325,7 +315,7 @@ export const PROJECTS: Project[] = [
     description:
       'AI copilot for personal finance — portfolio analysis, risk signals, and conversational insights.',
     stack: ['Next.js', 'LLMs', 'Finance'],
-    github: 'https://github.com/serverf21',
+    github: 'https://github.com/serverf21/personal-wealth-analyzer',
     gradient: 'from-forge-orange to-forge-yellow',
     featured: true,
     category: ['product'],
@@ -370,7 +360,7 @@ export const PROJECTS: Project[] = [
     description: 'Arcade racing experience with Three.js-powered visuals.',
     stack: ['React', 'Three.js', 'Vite'],
     live: 'https://crazy-racing-react.vercel.app/',
-    github: 'https://github.com/serverf21',
+    github: 'https://github.com/serverf21/crazy-racing-3js',
     gradient: 'from-forge-orange via-forge-yellow to-forge-cyan',
     category: ['opensource'],
   },
@@ -378,7 +368,7 @@ export const PROJECTS: Project[] = [
     name: 'D-Social',
     description: 'Decentralized social platform prototype on blockchain.',
     stack: ['React', 'Node.js', 'Web3'],
-    github: 'https://github.com/serverf21',
+    github: 'https://github.com/serverf21/DeSocial-Blockchain',
     gradient: 'from-forge-yellow to-forge-violet',
     category: ['opensource'],
   },
@@ -386,7 +376,7 @@ export const PROJECTS: Project[] = [
     name: 'Food Delivery',
     description: 'Full-stack ordering flow with real-time status updates.',
     stack: ['React', 'Node.js', 'MongoDB'],
-    github: 'https://github.com/serverf21',
+    github: 'https://github.com/serverf21/bhoj-food-delivery-app',
     gradient: 'from-forge-orange to-forge-violet',
     category: ['opensource'],
   },
@@ -458,19 +448,21 @@ export type ExperienceEntry = {
 export const EXPERIENCE: ExperienceEntry[] = [
   {
     company: 'Walmart Global Tech India',
-    role: 'Software Engineer',
-    period: '2022 — Present',
-    location: 'Bengaluru, India',
+    role: 'Software Engineer III',
+    period: 'December 2023 — Present',
+    location: 'Bengaluru, India (Remote)',
     featured: true,
     highlights: [
-      'Build and maintain high-traffic customer-facing web experiences with React and TypeScript.',
-      'Improve performance through code-splitting, caching strategies, and measurable Core Web Vitals gains.',
-      'Collaborate across product, design, and platform teams to ship reliable features at scale.',
+      'Designed and deployed a production Agentic AI system that routes natural language queries to REST APIs, fetches structured DB data, and auto-recommends dashboard visualization widgets.',
+      'Architected an AI-powered warehouse audit system using OpenAI Vision and OpenCV, automating object detection and eliminating manual audit cycles.',
+      'Engineered an LLM-powered test automation framework using Playwright and OpenAI for code-free test generation from natural language specs — adopted across 3 products, improving QA velocity by 60%.',
+      'Architected 29 production Nest.js APIs using CQRS, integrating Kafka and blockchain for real-time supply chain tracking; migrated legacy Java APIs to NestJS, reducing runtime by 50%.',
+      'Led a team of 5 engineers end-to-end on a logistics decanting application, from product discovery to production deployment.',
     ],
   },
   {
     company: 'Sears Global Technologies India',
-    role: 'Full Stack Developer',
+    role: 'Software Developer',
     period: 'June 2022 — July 2023',
     location: 'Bangalore (Remote)',
     highlights: [
@@ -490,12 +482,11 @@ export const EXPERIENCE: ExperienceEntry[] = [
     ],
   },
   {
-    company: 'NIT Silchar',
-    role: 'B.Tech — Computer Science',
-    period: '2015 — 2019',
+    company: 'National Institute of Technology Silchar',
+    role: 'B.Tech, Mechanical Engineering',
+    period: '2016 — 2020',
     highlights: [
-      'Built foundation in algorithms, systems, and software engineering practices.',
-      'Participated in hackathons and technical communities focused on web development.',
+      'Final year project — Self-Driving Car Prototype (ML, CNN, OpenCV, Python).',
     ],
   },
 ];

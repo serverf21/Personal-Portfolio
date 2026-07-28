@@ -120,7 +120,7 @@ const Banner: React.FC = memo(() => {
                 </Link>
               </div>
               <a
-                href="https://drive.google.com/file/d/1rPekwiz2ls7cH4eLR1JHJL0LPJqIjdVj/view?usp=sharing"
+                href="https://drive.google.com/file/d/1LvlyJS3mwNyjocWHq2DNJT3LkrX1FI3j/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
               >

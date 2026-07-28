@@ -7,24 +7,25 @@ Live site: [https://sarvagyasaxena.tech](https://sarvagyasaxena.tech)
 ## Requirements
 
 - **Node.js 24.x** (see `package.json` `engines`)
+- **pnpm** (see `package.json` `packageManager`)
 
 ## Setup
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
 ## Scripts
 
-| Command        | Description              |
-|----------------|--------------------------|
-| `npm run dev`  | Start development server |
-| `npm run build`| Production build         |
-| `npm run start`| Run production server    |
-| `npm run lint` | ESLint (Next.js)         |
+| Command         | Description              |
+|-----------------|---------------------------|
+| `pnpm run dev`  | Start development server |
+| `pnpm run build`| Production build         |
+| `pnpm run start`| Run production server    |
+| `pnpm run lint` | ESLint (Next.js)         |
 
 ## Project structure
 
