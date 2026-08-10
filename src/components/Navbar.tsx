@@ -96,8 +96,6 @@ export default function Navbar() {
                   <li className="pt-2">
                     <Link
                       href={SITE.resumeUrl}
-                      target="_blank"
-                      rel="noreferrer"
                       onClick={closeMenu}
                       className="inline-block rounded-full border-2 border-forge-orange px-6 py-2.5 font-semibold text-forge-orange shadow-[0_0_20px_rgba(255,107,53,0.35)]"
                     >
@@ -154,8 +152,6 @@ export default function Navbar() {
           <div className="flex items-center justify-end gap-2 md:col-start-3">
             <Link
               href={SITE.resumeUrl}
-              target="_blank"
-              rel="noreferrer"
               className="interactive hidden rounded-full border border-forge-orange px-5 py-2 text-sm font-semibold text-forge-orange shadow-[0_0_20px_rgba(255,107,53,0.35)] transition hover:bg-forge-orange hover:text-canvas-dark md:inline-block"
             >
               Resume

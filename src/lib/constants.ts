@@ -9,7 +9,7 @@ export const SITE = {
   company: 'Walmart',
   email: 'sarvagyasaxena.2102@gmail.com',
   url: 'https://sarvagyasaxena.tech',
-  resumeUrl: 'https://drive.google.com/file/d/1LvlyJS3mwNyjocWHq2DNJT3LkrX1FI3j/view?usp=sharing',
+  resumeUrl: '/resume',
   firebaseContactUrl:
     'https://personal-portfolio-d8375-default-rtdb.firebaseio.com/sarvagyacontact.json',
 } as const;
